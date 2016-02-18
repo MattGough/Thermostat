@@ -69,4 +69,13 @@ describe('Thermostat', function() {
      thermostat.resetTemperature();
      expect(thermostat.getCurrentTemperature()).toEqual(20);
    });
+
+   describe('when temperature < 18 degrees', function(){
+     it('colours the display green', function(){
+       for (var i = 0; i < 7; i++) {
+         thermostat.decreaseTemperature();
+       }
+    expect(thermostat.displayColour()).toEqual('green');
+    });
+   });
 });
