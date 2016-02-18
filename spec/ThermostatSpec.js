@@ -11,10 +11,17 @@ describe('Thermostat', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   });
 
-  describe('#up', function(){
+  describe('#increaseTemperature', function(){
    it('increase temperature by one degree', function() {
      thermostat.increaseTemperature();
      expect(thermostat.getCurrentTemperature()).toEqual(21);
    });
  });
+
+ describe('#decreaseTemperature', function(){
+  it('decreases temperature by one degree', function() {
+    thermostat.decreaseTemperature();
+    expect(thermostat.getCurrentTemperature()).toEqual(19);
+  });
+});
 });
