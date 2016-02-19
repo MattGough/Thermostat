@@ -7,8 +7,9 @@ function Thermostat() {
   this.MAX_LIMIT_PSM_OFF = 32;
   this.MAX_LIMIT_PSM_ON = 25;
   this.DEFAULT_TEMPERATURE = 20;
+  this.MAX_TEMP_GREEN = 18;
   this.temperature = this.DEFAULT_TEMPERATURE;
-  this.colour = 'red';
+  this.colour = 'yellow';
 };
 
 Thermostat.prototype.getCurrentTemperature = function() {
@@ -57,5 +58,13 @@ Thermostat.prototype.resetTemperature = function() {
 }
 
 Thermostat.prototype.displayColour = function() {
+if (this.temperature < this.MAX_LIMIT_PSM_ON && this.temperature > this.MAX_TEMP_GREEN) {
+  return this.colour = 'yellow'
+}
+else if (this.temperature >= this.MAX_LIMIT_PSM_ON) {
+  return this.colour = 'red'
+}
+else
   return this.colour = 'green'
+
 }

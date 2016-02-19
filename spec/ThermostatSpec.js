@@ -72,10 +72,27 @@ describe('Thermostat', function() {
 
    describe('when temperature < 18 degrees', function(){
      it('colours the display green', function(){
-       for (var i = 0; i < 7; i++) {
+       for (var i = 0; i < 3; i++) {
          thermostat.decreaseTemperature();
        }
     expect(thermostat.displayColour()).toEqual('green');
     });
    });
+  describe('when temperature is less than 25 degrees and greater than 18 degrees', function(){
+    it('colours the display yellow', function(){
+      for (var i =0; i < 1; i++) {
+        thermostat.decreaseTemperature();
+      }
+    expect(thermostat.displayColour()).toEqual('yellow');
+  });
+});
+  describe('when temperature is > 25 degrees', function(){
+    it('colours the display red', function(){
+      for (var i=0; i < 5; i++) {
+        thermostat.increaseTemperature();
+      }
+    expect(thermostat.displayColour()).toEqual('red');
+    });
+  });
+
 });
