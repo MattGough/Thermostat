@@ -4,34 +4,31 @@
   <title>Thermostat Interface</title>
  </head>
   <body>
-    <section>
-      <h1>Current temperature: <span id="current-temperature">20</span></h1>
-      <select id="current-city">
-        <option value="london">London</option>
-        <option value="newyork">New York</option>
-        <option value="paris">Paris</option>
-        <option value="tokyo">Tokyo</option>
-      </select>
-    </section>
-    <section>
-    <!-- <h1>Current temperature: <span id="current-temperature"></span></h1> -->
-   </section>
-    <section>
-      <h1 id="temperature"></h1>
-      <p>
-
-    <button id="Increase_temp">+</button>
-    <button id="Decrease_temp">-</button>
-    <button id="PSM_ON">PSM on</button>
-    <button id="PSM_OFF">PSM off</button>
-    <button id="Reset_Temp">reset</button>
-    power saving mode is <span id="power-saving-status">on</span>
-   </p>
+   <section class='temp_control'>
+     <h1> <span id="temperature"></span> &deg;C</h1>
+     <span>TEMP</span>
+     <button id="Increase_temp">+</button>
+     <button id="Decrease_temp">-</button>
+     <button id="Reset_Temp">RESET</button>
+      <br >
+       <br >
+    <button id="PSM_ON">PSM ON</button>
+    <button id="PSM_OFF">PSM OFF</button>
+      PSM <span id="power-saving-status">ON</span>
   </section>
-  <script src="src/Thermostat.js"></script>
-
+   <br >
+   <section class='local_conditions'>
+    <form id="select-city">
+     <input id="current-city" type="text" placeholder="Enter location"></input>
+     <input type="submit"></input>
+    </form>
+  </section>
+   <br >
+    <span id="current-info"></span>
+   <script src="src/Thermostat.js"></script>
  </body>
 </html>
+
 <script src="jquery.js"></script>
-<script src="interface.js"></script>
-<link href="css/layout.css" type="text/css" rel="stylesheet" />
+ <script src="interface.js"></script>
+  <link href="css/tempcolour.css" type="text/css" rel="stylesheet" />
