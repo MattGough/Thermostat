@@ -3,7 +3,11 @@
  <head>
   <title>Thermostat Interface</title>
  </head>
+   <link href="css/tempcolour.css" type="text/css" rel="stylesheet" />
   <body>
+    <h1 class="heading">Thermostat</h1>
+    <main>
+      <div class='temp_control1'>
    <section class='temp_control'>
      <h1> <span id="temperature"></span> &deg;C</h1>
      <span>TEMP</span>
@@ -16,19 +20,22 @@
     <button id="PSM_OFF">PSM OFF</button>
       PSM <span id="power-saving-status">ON</span>
   </section>
+</div>
    <br >
+ <div class='local'>
    <section class='local_conditions'>
     <form id="select-city">
      <input id="current-city" type="text" placeholder="Enter location"></input>
      <input type="submit"></input>
     </form>
   </section>
+</div>
    <br >
     <span id="current-info"></span>
+  </main>
    <script src="src/Thermostat.js"></script>
  </body>
 </html>
 
 <script src="jquery.js"></script>
  <script src="interface.js"></script>
-  <link href="css/tempcolour.css" type="text/css" rel="stylesheet" />
